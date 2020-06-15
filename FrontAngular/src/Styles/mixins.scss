@@ -1,0 +1,24 @@
+@mixin background($img){
+        background-image: url($img);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+}
+
+@mixin maxSizes($maxWidth,$maxHeight,$margin) {
+    max-width: $maxWidth;
+    max-width: $maxHeight;
+    margin: $margin;
+}
+
+@mixin positioning($leftM,$bottomM){
+    align-items: center;
+    margin-left: $leftM;
+    margin-bottom: $bottomM;
+}
+
+@mixin profileImg($width,$height){
+    width: $width;
+    height: $height;
+}

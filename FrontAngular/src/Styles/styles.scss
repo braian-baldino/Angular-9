@@ -1,0 +1,86 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+@import '../../node_modules/alertifyjs/build/css/alertify.min.css';
+@import '../../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
+@import '../../node_modules/mdbootstrap/css/mdb.css';
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+body{
+    @include background($backgroundImg);
+}
+
+.logoLayout{
+    @include maxSizes(60px,60px,10px);
+}
+
+.carouselSize{
+    @include maxSizes(900px,900px,20px);
+}
+
+.carouselText{
+    @include positioning(800px,150px);
+}
+
+.jumbotron{
+    padding: 20px;
+    align-self: center;
+    margin:30px;
+}
+
+.profileImage{
+    @include profileImg(60px,60px);
+}
+
+.whiteBtn{
+    color: white;
+}
+.whiteBtn:hover{
+    color: whitesmoke;
+}
+
+.authItem{
+    color: rgb(214, 214, 214);
+}
+.authItem:hover{
+    color: rgb(255, 255, 255);
+
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.navItemsLeft{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navItemsRight{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.authForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+
+    position: fixed;
+    max-width: 420px;
+    min-width: 280px;
+    top: 25%;
+    right: 50%;
+    left: 50%;
+
+    border-radius: 5px;
+    padding: 20px;
+    
+    
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

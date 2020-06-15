@@ -1,0 +1,62 @@
+<!--Navbar -->
+<header>
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark blue-gradient">
+  <img class="logoLayout" src="./../../../assets/logo.png" alt="">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+    <ul class="navbar-nav mr-auto">
+      <ng-container *ngFor="let link of links">
+        <li class="nav-item">
+          <a class="nav-link" href="{{link.url}}">{{link.name}}</a>
+        </li>
+      </ng-container>
+    </ul>
+    <ng-container *ngIf="isLoged">
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user"></i>
+          {{authService.userName | titlecase}}
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default"
+          aria-labelledby="navbarDropdownMenuLink-333">
+          <a class="dropdown-item" href="#">Mi Perfil</a>
+          <a class="dropdown-item" (click)="logout()">Salir</a>
+        </div>
+      </li>
+    </ul>
+  </ng-container>
+  <ng-container *ngIf="!isLoged">
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item">
+        <a class="nav-link authItem" (click)="displayLogin()">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link authItem" (click)="displayRegister()">Registrarse</a>
+      </li>
+    </ul>
+  </ng-container>
+  </div>
+</nav>
+<!--/.Navbar -->
+</header>
+
+<ng-container *ngIf="!isLoged">
+  <app-auth-component [display]='toDisplay' (close)="closeAuth($event)"></app-auth-component>
+</ng-container>
+
+<!-- <ng-container *ngIf="isLoged">  
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">Informes
+    </a>
+    <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+      <a class="dropdown-item" href="#">Anual</a>
+      <a class="dropdown-item" href="#">Mensual</a>
+    </div>
+  </li>
+</ng-container> -->
